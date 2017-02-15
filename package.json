@@ -2,8 +2,23 @@
   "name": "react-markdown",
   "version": "0.1.0",
   "dependencies": {
+    "codemirror": "^5.23.0",
     "marked": "^0.3.6",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "css-loader": "^0.26.1",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2.1"
+  },
+  "scripts": {
+    "build": "webpack"
   }
 }
