@@ -1,0 +1,8 @@
+@import '../lib/codemirror.css';
+@import '../lib/base16-light.css';
+
+.CodeMirror {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+}
