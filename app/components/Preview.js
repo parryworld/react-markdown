@@ -6,10 +6,18 @@ class Preview extends Component {
     return (
       <div
         className="preview"
-        dangerouslySetInnerHTML={{__html: marked(this.props.text)}}
-      ></div>
+        dangerouslySetInnerHTML={{ __html: marked(this.props.text) }}
+      />
     );
   }
 }
+
+Preview.propTypes = {
+  text: React.PropTypes.string
+};
+
+Preview.defaultProps = {
+  text: ''
+};
 
 export default Preview;

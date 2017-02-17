@@ -17,7 +17,7 @@ class App extends Component {
       <div className="container">
         <Editor
           defaultValue={DEFAULT_TEXT}
-          getValue={(value) => {this.setState({text: value})}}
+          getValue={(value) => { this.setState({ text: value }); }}
         />
         <Preview text={this.state.text} />
       </div>

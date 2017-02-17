@@ -31,11 +31,21 @@ class Editor extends Component {
   render() {
     return (
       <textarea
-        ref={(textarea) => {this.textarea = textarea}}
+        ref={(textarea) => { this.textarea = textarea; }}
         defaultValue={this.props.defaultValue}
-      ></textarea>
+      />
     );
   }
 }
+
+Editor.propTypes = {
+  getValue: React.PropTypes.func,
+  defaultValue: React.PropTypes.string
+};
+
+Editor.defaultProps = {
+  getValue: () => null,
+  defaultValue: ''
+};
 
 export default Editor;
