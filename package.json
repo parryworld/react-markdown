@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "dependencies": {
     "codemirror": "^5.23.0",
+    "highlight.js": "^9.9.0",
     "marked": "^0.3.6",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"

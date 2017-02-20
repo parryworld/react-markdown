@@ -1,8 +1,12 @@
-.preview {
+@import '../lib/markdown';
+@import '../lib/github';
+
+.markdown-body {
   position: absolute;
   top: 0;
   left: 50%;
   width: 50%;
   height: 100%;
+  padding: 30px 20px;
   overflow-y: auto;
 }

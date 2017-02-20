@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CodeMirror from 'codemirror';
-import 'codemirror/mode/markdown/markdown';
+import 'codemirror/mode/gfm/gfm';
 
 class Editor extends Component {
   constructor(props) {
@@ -10,10 +10,12 @@ class Editor extends Component {
 
   componentDidMount() {
     this.editor = CodeMirror.fromTextArea(this.textarea, {
-      mode: 'markdown',
+      mode: 'gfm',
+      lineWrapping: true,
       theme: 'base16-light'
     });
     this.editor.on('change', this.onChange);
+    this.editor.focus();
   }
 
   componentWillUnmount() {
@@ -25,7 +27,7 @@ class Editor extends Component {
     this.timer && clearTimeout(this.timer);
     this.timer = setTimeout(() => {
       this.props.getValue && this.props.getValue(value);
-    }, 1000);
+    }, 400);
   }
 
   render() {
