@@ -12,10 +12,20 @@ class Preview extends Component {
     });
   }
 
+  componentDidUpdate() {
+    const info = this.props.scrollInfo;
+    if (info.height && info.height - info.clientHeight > 0) {
+      const maxScrollTop = this.preview.scrollHeight - this.preview.clientHeight;
+      const scrollTop = Math.floor(maxScrollTop * info.top / (info.height - info.clientHeight));
+      this.preview.scrollTop = scrollTop;
+    }
+  }
+
   render() {
     return (
       <div
         className="markdown-body"
+        ref={(preview) => {this.preview = preview}}
         dangerouslySetInnerHTML={{ __html: marked(this.props.text) }}
       />
     );
