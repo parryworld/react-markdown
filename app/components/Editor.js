@@ -15,7 +15,7 @@ class Editor extends Component {
       mode: 'gfm',
       lineWrapping: true,
       theme: 'base16-light',
-      extraKeys: {"Enter": "newlineAndIndentContinueMarkdownList"}
+      extraKeys: { Enter: 'newlineAndIndentContinueMarkdownList' }
     });
     this.editor.on('change', this.onChange);
     this.editor.on('scroll', this.onScroll);
@@ -32,11 +32,11 @@ class Editor extends Component {
       e.preventDefault();
       e.stopPropagation();
       const reader = new FileReader();
-      reader.onload = (e) => {
-        this.editor.setValue(e.target.result);
+      reader.onload = (ev) => {
+        this.editor.setValue(ev.target.result);
       };
       reader.readAsText(e.dataTransfer.files[0]);
-    },false);
+    }, false);
   }
 
   componentWillUnmount() {
